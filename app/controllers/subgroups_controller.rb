@@ -6,7 +6,7 @@ class SubgroupsController < ApplicationController
 
     respond_to do |format|
       if @subgroup.save
-        format.html { redirect_to subgroup_url(@subgroup), notice: "O subgrupo foi criado com sucesso." }
+        format.html { redirect_to subgroup_url(@subgroup), notice: "A new subgroup was successfully created." }
         format.json { render :show, status: :created, location: @subgroup }
       else
         format.html { render :new, status: :unprocessable_entity }
