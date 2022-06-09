@@ -1,5 +1,10 @@
 class SubgroupsController < ApplicationController
 
+  # GET /subgroups/new
+  def new
+    @subgroup = Subgroup.new
+  end
+
   # POST /subgroups or subgroups.json
   def create
     @subgroup = Subgroup.new(subgroup_params)
