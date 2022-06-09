@@ -23,6 +23,6 @@ class SubgroupsController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def subgroup_params
-      params.require(:subgroup).permit(:acronyms, :description)
+      params.require(:subgroup).permit(:acronym, :description)
     end
 end

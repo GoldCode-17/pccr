@@ -15,7 +15,7 @@
 
   <%= @subgroups.each do |subgroup| %>
     <tr>
-      <td><%= subgroup.acronyms %></td>
+      <td><%= subgroup.acronym %></td>
       <td><%= subgroup.description %></td>
       <td><%= link_to 'Show', subgroup %></td>
       <td><%= link_to 'Edit', edit_subgroup_path(subgroup) %></td>
