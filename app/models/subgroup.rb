@@ -1,3 +1,5 @@
 class Subgroup < ApplicationRecord
-  validates :acronym, :description, presence: true
+  validates_presence_of :acronym, :description, presence: true
+  validates_length_of :acronym, maximum: 5
+  validates_length_of :description, maximum: 50
 end
