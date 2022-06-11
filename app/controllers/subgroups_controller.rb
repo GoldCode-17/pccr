@@ -1,4 +1,5 @@
 class SubgroupsController < ApplicationController
+  before_action :set_subgroup, only: %i[ edit update destroy ]
 
   # GET /subgroups/new
   def new
@@ -38,6 +39,11 @@ class SubgroupsController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_subgroup
+      @subgroup = Subgroup.find(params[:id])
+    end
+
     # Only allow a list of trusted parameters through.
     def subgroup_params
       params.require(:subgroup).permit(:acronym, :description)
