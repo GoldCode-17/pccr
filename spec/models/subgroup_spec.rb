@@ -26,10 +26,10 @@ RSpec.describe Subgroup, type: :model do
       it { should validate_length_of(:description).is_at_most(50) }
     end
 
-    #it 'Delete Subgroup' do
-    #  subgroup_type = Subgroup.create(acronym: "F1", description: "FUNDAMENTAL 1")
-    #  subgroup_type.destroy
-    #  expect { subgroup_type.reload }.to raise_error(ActiveRecord::RecordNotFound)
-    #end
+    it 'Delete Subgroup' do
+      subgroup_type = Subgroup.create(acronym: "F1", description: "FUNDAMENTAL 1")
+      subgroup_type.destroy
+      expect { subgroup_type.reload }.to raise_error(ActiveRecord::RecordNotFound)
+    end
   end
 end
