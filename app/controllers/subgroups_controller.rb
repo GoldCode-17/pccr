@@ -1,5 +1,19 @@
 class SubgroupsController < ApplicationController
-  before_action :set_subgroup, only: %i[ edit update destroy ]
+  before_action :set_subgroup, only: %i[ show edit update destroy ]
+
+  # GET /subgroups or /subgroups.json
+  def index
+    @subgroups = Subgroup.all
+
+    # filter by acronym
+    @subgroups = Subgroup.where("acronym = #{params[:acronym]}") if params[:acronym]
+    # filter by description
+    @subgroups = Subgroup.where("description = #{params[:description]}") if params[:description]''
+  end
+
+  # GET /subgroups/1 or /subgroups/1.json
+  def show
+  end
 
   # GET /subgroups/new
   def new
