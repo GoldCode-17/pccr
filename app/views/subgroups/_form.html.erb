@@ -1,15 +1,15 @@
 <%= form_with(model: subgroup) do |form| %>
-  <%= if subgroup.errors.any? %>
+  <% if subgroup.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(subgroup.errors.count, "error") %> prohibited this subgroup from being saved:</h2>
 
       <ul>
-        <%= subgroup.errors.each do |error| %>
+        <% subgroup.errors.each do |error| %>
           <li><%= error.full_message %></li>
-        <%= end %>
+        <% end %>
       </ul>
     </div>
-  <%= end %>
+  <% end %>
 
   <div class="field">
     <%= form.label :acronym %>
@@ -24,4 +24,4 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-<%= end %>
+<% end %>

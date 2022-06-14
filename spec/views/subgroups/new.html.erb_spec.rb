@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "subgroups/new", type: :view do
   before(:each) do
     assign(:subgroup, Subgroup.new(
-      acronyms: "MyString",
+      acronym: "MyStr",
       description: "MyString"
     ))
   end
@@ -13,7 +13,7 @@ RSpec.describe "subgroups/new", type: :view do
 
     assert_select "form[action=?][method=?]", subgroups_path, "post" do
 
-      assert_select "input[name=?]", "subgroup[acronyms]"
+      assert_select "input[name=?]", "subgroup[acronym]"
 
       assert_select "input[name=?]", "subgroup[description]"
     end
