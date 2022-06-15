@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Subgroups</h1>
+<h1>Subgrupos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Acronyms</th>
-      <th>Description</th>
+      <th>Sigla</th>
+      <th>Descrição</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +17,9 @@
     <tr>
       <td><%= subgroup.acronym %></td>
       <td><%= subgroup.description %></td>
-      <td><%= link_to 'Show', subgroup %></td>
-      <td><%= link_to 'Edit', edit_subgroup_path(subgroup) %></td>
-      <td><%= link_to 'Destroy', subgroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Detalhes', subgroup %></td>
+      <td><%= link_to 'Editar', edit_subgroup_path(subgroup) %></td>
+      <td><%= link_to 'Excluir', subgroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Subgroup', new_subgroup_path %>
+<%= link_to 'Novo Subgrupo', new_subgroup_path %>
