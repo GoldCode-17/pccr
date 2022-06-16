@@ -30,7 +30,7 @@ class SubgroupsController < ApplicationController
 
     respond_to do |format|
       if @subgroup.save
-        format.html { redirect_to subgroup_url(@subgroup), notice: "A new subgroup was successfully created." }
+        format.html { redirect_to subgroup_url(@subgroup), notice: "Um novo subgrupo foi criado com sucesso." }
         format.json { render :show, status: :created, location: @subgroup }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +43,7 @@ class SubgroupsController < ApplicationController
   def update
     respond_to do |format|
       if @subgroup.update(subgroup_params)
-        format.html { redirect_to subgroup_url(@subgroup), notice: "Subgroup was successfully updated." }
+        format.html { redirect_to subgroup_url(@subgroup), notice: "O subgrupo foi atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @subgroup }
       else
         format.html { render :edit, status: :unprocessable_entity}
@@ -57,7 +57,7 @@ class SubgroupsController < ApplicationController
     @subgroup.destroy
 
     respond_to do |format|
-      format.html { redirect_to subgroups_url, notice: "Subgroup was successfully destroyed!" }
+      format.html { redirect_to subgroups_url, notice: "O subgrupo foi excluído com sucesso!" }
       format.json { head :no_content }
     end
   end
