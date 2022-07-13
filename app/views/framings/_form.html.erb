@@ -1,0 +1,27 @@
+<%= form_with(model: framing) do |form| %>
+  <% if framing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(framing.errors.count, "error") %> prohibited this framing from being saved:</h2>
+
+      <ul>
+        <% framing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :service_time %>
+    <%= form.text_field :service_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
