@@ -4,7 +4,7 @@ RSpec.describe "framings/edit", type: :view do
   before(:each) do
     @framing = assign(:framing, Framing.create!(
       service_time: "MyString",
-      position: "MyString"
+      position: 1
     ))
   end
 

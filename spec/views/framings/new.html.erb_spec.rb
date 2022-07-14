@@ -4,7 +4,7 @@ RSpec.describe "framings/new", type: :view do
   before(:each) do
     assign(:framing, Framing.new(
       service_time: "MyString",
-      position: "MyString"
+      position: 1
     ))
   end
 
