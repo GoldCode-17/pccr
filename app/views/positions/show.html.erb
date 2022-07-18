@@ -3,6 +3,9 @@
 <p>
   <strong>Descrição:</strong>
   <%= @position.description %>
+  <br>
+  <strong>Sub grupo:</strong>
+  <%= @position.subgroup.description %>
 </p>
 
 <%= link_to 'Editar', edit_position_path(@position) %> |
