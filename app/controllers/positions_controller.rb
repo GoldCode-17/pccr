@@ -1,5 +1,6 @@
 class PositionsController < ApplicationController
-  before_action :set_position, only: %i[ show edit update destroy ]
+  before_action :set_position, only: %i[show edit update destroy]
+  before_action :set_subgroup_options, only: [:new, :create, :edit, :update, :show]
 
   # GET /positions or /positions.json
   def index
@@ -20,7 +21,6 @@ class PositionsController < ApplicationController
   # POST /positions or /positions.json
   def create
     @position = Position.new(position_params)
-
     respond_to do |format|
       if @position.save
         format.html { redirect_to position_url(@position), notice: 'Cargo criado com sucesso.' }
@@ -56,13 +56,22 @@ class PositionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_position
-      @position = Position.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def position_params
-      params.require(:position).permit(:description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_position
+    @position = Position.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def position_params
+    params.require(:position).permit(:description, :subgroup_id)
+  end
+
+  def set_subgroup_options
+    @subgroup_options = Subgroup.all.pluck(:description, :id)
+  end
+
+  def set_subgroup
+    @subgroup = Subgroup.find_by(id: @position.subgroup_id)
+  end
 end
