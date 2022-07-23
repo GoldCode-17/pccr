@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_14_172606) do
-
-  create_table "framings", force: :cascade do |t|
-    t.string "service_time"
-    t.integer "position"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2022_06_07_195156) do
 
   create_table "subgroups", force: :cascade do |t|
     t.string "acronym"
