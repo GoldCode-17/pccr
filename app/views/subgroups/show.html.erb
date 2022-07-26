@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @subgroup.acronym %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @subgroup.description %>
+</p>
+
+<%= link_to 'Editar', edit_subgroup_path(@subgroup) %> |
+<%= link_to 'Voltar', subgroups_path %>
