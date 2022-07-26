@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @schooling.level %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @schooling.description %>
+</p>
+
+<p>
+  <strong>Percentage:</strong>
+  <%= @schooling.percentage %>
+</p>
+
+<%= link_to 'Edit', edit_schooling_path(@schooling) %> |
+<%= link_to 'Back', schoolings_path %>
